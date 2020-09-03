@@ -78,7 +78,7 @@ Subscription.prototype._validateArgs = function (args) {
     if(!subscription.params)
         subscription.params = 0;
 
-    if (args.length !== subscription.params) {
+    if ((args.length !== subscription.params) && (args.length !== subscription.params + 1)) {
         throw errors.InvalidNumberOfParams(
             args.length,
             subscription.params,
