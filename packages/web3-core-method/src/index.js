@@ -554,7 +554,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
         if (!this.requestManager.provider.on) {
             startInterval()
         } else {
-            _ethereumCall.subscribe('newBlockHeaders', {includeTransactions: true}, function (err, blockHeader, sub) {
+            _ethereumCall.subscribe('newBlockHeaders', {includeTransactions: false}, function (err, blockHeader, sub) {
                 if (err || !blockHeader) {
                     // fall back to polling
                     startInterval()
